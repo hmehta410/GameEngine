@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{23572954-dac3-410d-9248-9a0062d25c88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{13a01ba4-bf19-4f56-8ed9-18c2afb13810}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Camera">
+      <UniqueIdentifier>{a2d6c2ce-eb8f-487f-a526-7f5ec69e2a35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders">
+      <UniqueIdentifier>{18f69e8f-7d96-4dde-80d3-9f748e204b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Models">
+      <UniqueIdentifier>{1899aca1-5169-47de-90ed-2b10d472e126}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Fonts">
+      <UniqueIdentifier>{d71813c2-ee3b-4776-bf05-5d9020c2c07e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Textures">
+      <UniqueIdentifier>{69430335-46cb-429b-8911-b2c51aee3b53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS">
+      <UniqueIdentifier>{9838992e-20d8-4cd5-a8b2-5b3e35f82b06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS\Component">
+      <UniqueIdentifier>{7efe4685-617f-4b4b-8596-5546b9c780d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS\Entity">
+      <UniqueIdentifier>{779a8c98-7b1f-4bc4-bd91-949d86e8c976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS\System">
+      <UniqueIdentifier>{a01a542e-b084-4a37-a26d-cc006b149ed9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems">
+      <UniqueIdentifier>{cfaff129-81a4-487a-bd6d-278898ef42b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\AnimationSystem">
+      <UniqueIdentifier>{23259f79-eb5b-425f-b0ae-2f4430724cad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\GraphicsSystem">
+      <UniqueIdentifier>{3215d49a-8ed6-4fe5-b13b-4e1cff5f400f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\TransformSystem">
+      <UniqueIdentifier>{457c2656-391c-4c94-860b-3c1ea744c579}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{29e530d6-ec0e-4fec-a8a7-01f778dff026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model">
+      <UniqueIdentifier>{15c6d914-d655-40c4-9892-3cb6885a5fcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Texture">
+      <UniqueIdentifier>{15eb4f73-d831-4a6f-bfd9-8b2e0a84ef17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\Skeleton">
+      <UniqueIdentifier>{9b63a524-8f69-453a-b902-60b7ceb9dc80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Animation">
+      <UniqueIdentifier>{bdd11ea4-7710-47f9-85bd-1600df8ca0fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\GraphicsSystem\GraphicsObjects">
+      <UniqueIdentifier>{d7a2f620-8fca-436e-ae4b-32a62a81061b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Source Files\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationClip.cpp">
+      <Filter>Source Files\Systems\AnimationSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="BoneAnimationScene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraMan.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="InputMan.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderMan.cpp">
+      <Filter>Source Files\Systems\GraphicsSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderObject.cpp">
+      <Filter>Source Files\Systems\GraphicsSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraControls.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="UniqueID.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="LightSource.cpp">
+      <Filter>Source Files\Systems\GraphicsSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentHandleBase.cpp">
+      <Filter>Source Files\ECS\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\ECS\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EntitySystem.cpp">
+      <Filter>Source Files\ECS\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Source Files\Systems\TransformSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformSystem.cpp">
+      <Filter>Source Files\Systems\TransformSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentHandleTransform.cpp">
+      <Filter>Source Files\Systems\TransformSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentFactoryTransform.cpp">
+      <Filter>Source Files\Systems\TransformSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Source Files\Systems\AnimationSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationSystem.cpp">
+      <Filter>Source Files\Systems\AnimationSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonType.cpp">
+      <Filter>Source Files\Systems\Skeleton</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalSystem.cpp">
+      <Filter>Source Files\Systems\Skeleton</Filter>
+    </ClCompile>
+    <ClCompile Include="Skeleton.cpp">
+      <Filter>Source Files\Systems\Skeleton</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationClipMan.cpp">
+      <Filter>Source Files\Systems\AnimationSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonMan.cpp">
+      <Filter>Source Files\Systems\Skeleton</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelMan.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="SkinnedAnimationScene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelViewerScene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="FlatTextureGraphicsObject.cpp">
+      <Filter>Source Files\Systems\GraphicsSystem\GraphicsObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidShadeGraphicsObject.cpp">
+      <Filter>Source Files\Systems\GraphicsSystem\GraphicsObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="SkinShaderGraphicsObject.cpp">
+      <Filter>Source Files\Systems\GraphicsSystem\GraphicsObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="GridGraphicsObject.cpp">
+      <Filter>Source Files\Systems\GraphicsSystem\GraphicsObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsObject.cpp">
+      <Filter>Source Files\Systems\GraphicsSystem\GraphicsObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsSystem.cpp">
+      <Filter>Source Files\Systems\GraphicsSystem</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Source Files\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Source Files\Systems\AnimationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationClip.h">
+      <Filter>Source Files\Systems\AnimationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="BoneAnimationScene.h">
+      <Filter>Source Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Source Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Source Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraMan.h">
+      <Filter>Source Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="InputMan.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyframe.h">
+      <Filter>Source Files\Systems\AnimationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderMan.h">
+      <Filter>Source Files\Systems\GraphicsSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderObject.h">
+      <Filter>Source Files\Systems\GraphicsSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraControls.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="UniqueId.h">
+      <Filter>Source Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentHandle.h">
+      <Filter>Source Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="LightSource.h">
+      <Filter>Source Files\Systems\GraphicsSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentHandleBase.h">
+      <Filter>Source Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Source Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Source Files\ECS\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EntitySystem.h">
+      <Filter>Source Files\ECS\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationSystem.h">
+      <Filter>Source Files\Systems\AnimationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Skeleton.h">
+      <Filter>Source Files\Systems\Skeleton</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalSystem.h">
+      <Filter>Source Files\Systems\Skeleton</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentFactoryTransform.h">
+      <Filter>Source Files\Systems\TransformSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentHandleTransform.h">
+      <Filter>Source Files\Systems\TransformSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Source Files\Systems\TransformSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformSystem.h">
+      <Filter>Source Files\Systems\TransformSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Source Files\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentDependencyNode.h">
+      <Filter>Source Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentFactoryTemplate.h">
+      <Filter>Source Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentFactory.h">
+      <Filter>Source Files\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyframeData.h">
+      <Filter>Source Files\Systems\AnimationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonType.h">
+      <Filter>Source Files\Systems\Skeleton</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationClipMan.h">
+      <Filter>Source Files\Systems\AnimationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonMan.h">
+      <Filter>Source Files\Systems\Skeleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Source Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelMan.h">
+      <Filter>Source Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Source Files\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="SkinnedAnimationScene.h">
+      <Filter>Source Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="InverseBindPose.h">
+      <Filter>Source Files\Systems\Skeleton</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelViewerScene.h">
+      <Filter>Source Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="FlatTextureGraphicsObject.h">
+      <Filter>Source Files\Systems\GraphicsSystem\GraphicsObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidShadeGraphicsObject.h">
+      <Filter>Source Files\Systems\GraphicsSystem\GraphicsObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="SkinShaderGraphicsObject.h">
+      <Filter>Source Files\Systems\GraphicsSystem\GraphicsObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="GridGraphicsObject.h">
+      <Filter>Source Files\Systems\GraphicsSystem\GraphicsObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsObject.h">
+      <Filter>Source Files\Systems\GraphicsSystem\GraphicsObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentFactoryGraphicsObject.h">
+      <Filter>Source Files\Systems\GraphicsSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsSystem.h">
+      <Filter>Source Files\Systems\GraphicsSystem</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\textureRender.fs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\textureRender.vs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\gridShader.fs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\gridShader.vs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Fonts\arial.fnt">
+      <Filter>Resource Files\Fonts</Filter>
+    </None>
+    <None Include="Shaders\pointLightDiffuse.fs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\pointLightDiffuse.vs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\skinningShader.vs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\skinningShader.fs.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Models\human.skeletalhierarchy">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\humanoid.skel">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\SpaceFrigate.mesh">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\teddy.invbindpose">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\teddy.skel">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\teddy.skeletalhierarchy">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\Warbear.mesh">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\Astroboy.mesh">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\Bone.mesh">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\Buggy.mesh">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\human.invbindpose">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Animations\punch.anim">
+      <Filter>Resource Files\Animation</Filter>
+    </None>
+    <None Include="Animations\run.anim">
+      <Filter>Resource Files\Animation</Filter>
+    </None>
+    <None Include="Animations\shot.anim">
+      <Filter>Resource Files\Animation</Filter>
+    </None>
+    <None Include="Animations\walk.anim">
+      <Filter>Resource Files\Animation</Filter>
+    </None>
+    <None Include="Animations\idle.anim">
+      <Filter>Resource Files\Animation</Filter>
+    </None>
+    <None Include="Models\human.mesh">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\teddy.mesh">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Fonts\arial.ttf">
+      <Filter>Resource Files\Fonts</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Fonts\arial.tga">
+      <Filter>Resource Files\Fonts</Filter>
+    </Image>
+    <Image Include="Textures\Polarbear.tga">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Textures\SpaceFrigate.tga">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Textures\Teddy.tga">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Textures\Warbear.tga">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Textures\Astroboy.tga">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Textures\Buggy.tga">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

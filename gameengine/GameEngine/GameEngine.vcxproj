@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{61FDBD0C-E189-45FC-88E1-627FE046B447}</ProjectGuid>
+    <RootNamespace>GameEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\GLFW\include;$(SolutionDir)..\Glew\include;$(SolutionDir)..\File\include;$(SolutionDir)..\Math\include;$(SolutionDir)..\DataStructures\include;$(SolutionDir)..\Time\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>_MBCS;GLEW_STATIC;ASSERT_BREAKPOINT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;File.lib;MathEngine.lib;DataStructures.lib;Time.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ShowProgress>NotSet</ShowProgress>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\GLFW\include;$(SolutionDir)..\Glew\include;$(SolutionDir)..\File\include;$(SolutionDir)..\Math\include;$(SolutionDir)..\DataStructures\include;$(SolutionDir)..\Time\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>_MBCS;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration);$(SolutionDir)..\Libraries;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;File.lib;MathEngine.lib;DataStructures.lib;Time.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>NotSet</ShowProgress>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AnimationClipMan.cpp" />
+    <ClCompile Include="AnimationSystem.cpp" />
+    <ClCompile Include="ComponentFactoryTransform.cpp" />
+    <ClCompile Include="ComponentHandleTransform.cpp" />
+    <ClCompile Include="ModelMan.cpp" />
+    <ClCompile Include="AnimationClip.cpp" />
+    <ClCompile Include="BoneAnimationScene.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraControls.cpp" />
+    <ClCompile Include="CameraMan.cpp" />
+    <ClCompile Include="ModelViewerScene.cpp" />
+    <ClCompile Include="ComponentHandleBase.cpp" />
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntitySystem.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GraphicsObject.cpp" />
+    <ClCompile Include="FlatTextureGraphicsObject.cpp" />
+    <ClCompile Include="SkinShaderGraphicsObject.cpp" />
+    <ClCompile Include="GraphicsSystem.cpp" />
+    <ClCompile Include="GridGraphicsObject.cpp" />
+    <ClCompile Include="InputMan.cpp" />
+    <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="LightSource.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="SkeletalSystem.cpp" />
+    <ClCompile Include="Skeleton.cpp" />
+    <ClCompile Include="SkeletonType.cpp" />
+    <ClCompile Include="SkinnedAnimationScene.cpp" />
+    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="TransformSystem.cpp" />
+    <ClCompile Include="ShaderMan.cpp" />
+    <ClCompile Include="ShaderObject.cpp" />
+    <ClCompile Include="SkeletonMan.cpp" />
+    <ClCompile Include="SolidShadeGraphicsObject.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="UniqueID.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="ComponentFactory.h" />
+    <ClInclude Include="ComponentFactoryGraphicsObject.h" />
+    <ClInclude Include="ComponentFactoryTransform.h" />
+    <ClInclude Include="ComponentHandleTransform.h" />
+    <ClInclude Include="InverseBindPose.h" />
+    <ClInclude Include="ModelMan.h" />
+    <ClInclude Include="AnimationClip.h" />
+    <ClInclude Include="AnimationClipMan.h" />
+    <ClInclude Include="AnimationSystem.h" />
+    <ClInclude Include="BoneAnimationScene.h" />
+    <ClInclude Include="KeyframeData.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CameraControls.h" />
+    <ClInclude Include="CameraMan.h" />
+    <ClInclude Include="ModelViewerScene.h" />
+    <ClInclude Include="ComponentDependencyNode.h" />
+    <ClInclude Include="ComponentFactoryTemplate.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntitySystem.h" />
+    <ClInclude Include="LightSource.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="ComponentHandleBase.h" />
+    <ClInclude Include="ComponentHandle.h" />
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GraphicsSystem.h" />
+    <ClInclude Include="SkeletalSystem.h" />
+    <ClInclude Include="Skeleton.h" />
+    <ClInclude Include="SkeletonType.h" />
+    <ClInclude Include="SkinnedAnimationScene.h" />
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="TransformSystem.h" />
+    <ClInclude Include="SolidShadeGraphicsObject.h" />
+    <ClInclude Include="GraphicsObject.h" />
+    <ClInclude Include="FlatTextureGraphicsObject.h" />
+    <ClInclude Include="SkinShaderGraphicsObject.h" />
+    <ClInclude Include="GridGraphicsObject.h" />
+    <ClInclude Include="InputMan.h" />
+    <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="Keyframe.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="Mouse.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="ShaderMan.h" />
+    <ClInclude Include="ShaderObject.h" />
+    <ClInclude Include="SkeletonMan.h" />
+    <ClInclude Include="System.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="UniqueId.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Animations\idle.anim" />
+    <None Include="Animations\punch.anim" />
+    <None Include="Animations\run.anim" />
+    <None Include="Animations\shot.anim" />
+    <None Include="Animations\walk.anim" />
+    <None Include="Fonts\arial.fnt" />
+    <None Include="Models\Astroboy.mesh" />
+    <None Include="Models\Bone.mesh" />
+    <None Include="Models\Buggy.mesh" />
+    <None Include="Models\human.invbindpose" />
+    <None Include="Models\human.mesh" />
+    <None Include="Models\human.skeletalhierarchy" />
+    <None Include="Models\humanoid.skel" />
+    <None Include="Models\SpaceFrigate.mesh" />
+    <None Include="Models\teddy.invbindpose" />
+    <None Include="Models\teddy.mesh" />
+    <None Include="Models\teddy.skel" />
+    <None Include="Models\teddy.skeletalhierarchy" />
+    <None Include="Models\Warbear.mesh" />
+    <None Include="Shaders\gridShader.fs.glsl" />
+    <None Include="Shaders\gridShader.vs.glsl" />
+    <None Include="Shaders\pointLightDiffuse.fs.glsl" />
+    <None Include="Shaders\pointLightDiffuse.vs.glsl" />
+    <None Include="Shaders\textureRender.fs.glsl" />
+    <None Include="Shaders\textureRender.vs.glsl" />
+    <None Include="Shaders\skinningShader.fs.glsl" />
+    <None Include="Shaders\skinningShader.vs.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Fonts\arial.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Fonts\arial.tga" />
+    <Image Include="Textures\Astroboy.tga" />
+    <Image Include="Textures\Buggy.tga" />
+    <Image Include="Textures\Polarbear.tga" />
+    <Image Include="Textures\SpaceFrigate.tga" />
+    <Image Include="Textures\Teddy.tga" />
+    <Image Include="Textures\Warbear.tga" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

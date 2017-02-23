@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="PCSTree">
+      <UniqueIdentifier>{9a780f1f-54b8-4eb4-92cd-a52248144832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LinkedList">
+      <UniqueIdentifier>{6b30a18e-10f8-41ea-b21f-911635c7b9ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LinkedList\DoubleLinked">
+      <UniqueIdentifier>{892dada9-557b-4bfb-baa3-e95e6b980d9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LinkedList\SingleLinked">
+      <UniqueIdentifier>{858adf23-6390-4b9a-8bcd-9d6d90c11f04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Array">
+      <UniqueIdentifier>{73e18a40-058f-4665-b1af-87edad32e41d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="String">
+      <UniqueIdentifier>{8cb8abb8-4e37-41e0-86f3-c616d9adda61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DList.cpp">
+      <Filter>LinkedList\DoubleLinked</Filter>
+    </ClCompile>
+    <ClCompile Include="SList.cpp">
+      <Filter>LinkedList\SingleLinked</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedIterator.cpp">
+      <Filter>LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="PCSTree.cpp">
+      <Filter>PCSTree</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\List\Link.h">
+      <Filter>LinkedList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\List\LinkedIterator.h">
+      <Filter>LinkedList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\List\DList.h">
+      <Filter>LinkedList\DoubleLinked</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\List\SList.h">
+      <Filter>LinkedList\SingleLinked</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\PCSTree\PCSNode.h">
+      <Filter>PCSTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\PCSTree\PCSSerializer.h">
+      <Filter>PCSTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\PCSTree\PCSTree.h">
+      <Filter>PCSTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Array\Array.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\String\String.h">
+      <Filter>String</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

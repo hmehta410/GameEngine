@@ -89,6 +89,12 @@ public:
 		return factory.IsMarkedForDelete(handle);
 	}
 
+	template <typename Function>
+	void Apply(Function& function)
+	{
+		factory.Apply(function);
+	}
+
 private:
 	ComponentFactory<T1, Component> factory;
 };

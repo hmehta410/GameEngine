@@ -1,78 +1,86 @@
 #include "List\LinkedIterator.h"
-#include "List\SList.h"
-#include "List\DList.h"
+#include "List\SLinkedList.h"
+#include "List\DLinkedList.h"
 #include "List\Link.h"
 #include "PCSTree.h"
 #include <assert.h>
 
 //FORWARD ITERATOR
-LinkedIterator::LinkedIterator(const SList& list)
+LinkedIterator::LinkedIterator(const SLinkedList& list)
 	: root(list.GetRoot()), first(list.GetRoot()->next), current(nullptr)
 {
 }
 
-LinkedIterator::LinkedIterator(const DList& list)
+LinkedIterator::LinkedIterator(const DLinkedList& list)
 	: root(list.GetRoot()), first(list.GetRoot()->next), current(nullptr)
 {
 }
 
 LinkedIterator::LinkedIterator(const PCSTree& list)
-	: LinkedIterator(list.GetRoot(), list.GetRoot()->next, nullptr)
+	: root(list.GetRoot()), first(list.GetRoot()->next), current(nullptr)
 {
 }
 
-LinkedIterator::LinkedIterator(const Link* root, Link* first, Link* current) : root(root), first(first), current(current)
-{
-}
-
-void* LinkedIterator::PrivFirst()
+SLink* LinkedIterator::First()
 {
 	current = first;
 	next = ((SLink*)current)->next;
 	return current;
 }
 
-void* LinkedIterator::PrivNext()
+SLink* LinkedIterator::Next()
 {
-	assert(!PrivIsDone());
+	assert(!IsDone());
 	current = next;
 	next = ((SLink*)current)->next;
 	return current;
 }
 
-bool LinkedIterator::PrivIsDone() const
+bool LinkedIterator::IsDone() const
 {
 	return current == root;
 }
 
-void* LinkedIterator::PrivCurrentItem() const
+SLink* LinkedIterator::CurrentItem() const
 {
 	return current;
 }
 
 
 //REVERSE ITERATOR
-LinkedReverseIterator::LinkedReverseIterator(const DList& list)
-	: LinkedIterator(list.GetRoot(), list.GetRoot()->prev, nullptr)
+LinkedReverseIterator::LinkedReverseIterator(const DLinkedList& list)
+	: root(list.GetRoot()), first(list.GetRoot()->prev), current(nullptr)
 {
 }
 
 LinkedReverseIterator::LinkedReverseIterator(const PCSTree& list)
-	: LinkedIterator(list.GetRoot(), list.GetRoot()->prev, nullptr)
+	: root(list.GetRoot()), first(list.GetRoot()->prev), current(nullptr)
 {
 }
 
-void* LinkedReverseIterator::PrivFirst()
+DLink* LinkedReverseIterator::First()
 {
 	current = first;
 	next = ((DLink*)current)->prev;
 	return current;
 }
 
-void* LinkedReverseIterator::PrivNext()
+DLink* LinkedReverseIterator::Next()
 {
-	assert(!PrivIsDone());
+	assert(!IsDone());
 	current = next;
 	next = ((DLink*)current)->prev;
 	return current;
 }
+
+
+bool LinkedReverseIterator::IsDone() const
+{
+	return current == root;
+}
+
+DLink* LinkedReverseIterator::CurrentItem() const
+{
+	return current;
+}
+

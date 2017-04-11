@@ -2,7 +2,8 @@
 
 #include "ComponentFactory.h"
 #include "Transform.h"
-#include "PCSTree/PCSTree.h"
+#include "List/DList.h"
+#include "PCSTree/Tree.h"
 #include "ComponentHandleTransform.h"
 #include "List/LinkedIterator.h"
 
@@ -20,7 +21,7 @@ public:
 	ComponentHandle<Transform>* CreateComponent(const Vect& position, const Quat& rotation, const Vect& scale, ComponentHandle<Transform>* parent = nullptr);
 
 	//returns a forward iterator to the transform's hierarchy
-	LinkedIterator GetHandles();	
+	ForwardIterator<PCSNode> GetHandles();	
 	
 	//Gets the parent for a given transform Handle
 	const ComponentHandle<Transform>* GetParent(const ComponentHandle<Transform>* transform) const;
@@ -36,9 +37,21 @@ public:
 
 	void CleanUp();
 
+	template <typename Function>
+	void Apply(Function& function)
+	{
+		auto it = transformHandleHierarchy.GetIterator();
+		for (auto link = it.First(); !it.IsDone(); link = it.Next())
+		{
+			auto transform = (ComponentHandle<Transform>*)link;
+			function(transform->GetReference());
+		}
+	}
+
 private:
-	PCSTree transformHandleHierarchy;
-	DList markedForDelete;
+	//they are both ComponentHandle<Transform>s but it'll get confused if it's a PCSNode or DLink
+	Tree<PCSNode> transformHandleHierarchy;     
+	DList<ComponentHandleBase> markedForDelete;
 
 	void RemoveHandle(ComponentHandleBase* handle);
 };

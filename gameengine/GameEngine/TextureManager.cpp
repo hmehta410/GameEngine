@@ -136,13 +136,6 @@ namespace
 	}
 }
 
-//A node class to hold textures and place them in the linked list
-struct TextureMan::TextureNode : public DLink
-{
-	String name;
-	Texture texture;
-};
-
 TextureMan::TextureMan()
 {
 }
@@ -200,10 +193,9 @@ Texture* TextureMan::Find(const char* assetName)
 {
 	TextureMan *man = TextureMan::GetInstance();
 
-	LinkedIterator it = man->textures.GetIterator();
-	for (Link* link = it.First(); !it.IsDone(); link = it.Next())
+	auto it = man->textures.GetIterator();
+	for (TextureNode* node = it.First(); !it.IsDone(); node = it.Next())
 	{
-		TextureNode* node = (TextureNode*)link;
 		if( node->name == assetName )
 		{
 			return &node->texture;

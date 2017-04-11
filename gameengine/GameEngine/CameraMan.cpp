@@ -6,15 +6,15 @@
 int CameraMan::cameraID = 0;
 
 CameraMan::CameraMan()
-	: cameras(), it(cameras), activeCam(nullptr)
+	: cameras(), it(cameras.GetIterator()), activeCam(nullptr)
 {
 }
 
 CameraMan::~CameraMan()
 {
-	LinkedIterator it = cameras.GetIterator();
+	auto it = cameras.GetIterator();
 
-	for (Link* link = it.First(); !it.IsDone(); link = it.Next())
+	for (auto* link = it.First(); !it.IsDone(); link = it.Next())
 	{
 		delete link;
 	}
@@ -37,11 +37,11 @@ Camera* CameraMan::CycleCamera()
 {
 	CameraMan* man = CameraMan::GetInstance();
 
-	man->activeCam = (Camera*)man->it.Next(); 
+	man->activeCam = man->it.Next(); 
 
 	if (man->it.IsDone())
 	{
-		man->activeCam = (Camera*)man->it.First();
+		man->activeCam = man->it.First();
 	}
 
 	return man->activeCam;
@@ -53,7 +53,7 @@ void CameraMan::Add(Camera* camera)
 
 	man->cameras.PushBack(camera);
 	man->it = man->cameras.GetIterator();
-	man->activeCam = (Camera*)man->it.First();
+	man->activeCam = man->it.First();
 }
 
 void CameraMan::Remove(Camera* camera)

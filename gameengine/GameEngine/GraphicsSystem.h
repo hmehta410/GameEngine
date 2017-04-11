@@ -2,6 +2,7 @@
 #include "System.h"
 #include "UniqueId.h"
 #include "ComponentFactoryGraphicsObject.h"
+#include "List/DList.h"
 
 class GraphicsObject;
 
@@ -30,10 +31,9 @@ public:
 	template <typename T>
 	ComponentFactory<T>* GetComponentFactory() const
 	{
-		LinkedIterator it = factories.GetIterator();
-		for (Link* link = it.First(); !it.IsDone(); link = it.Next())
+		auto it = factories.GetIterator();
+		for (GraphicsFactory* factory = it.First(); !it.IsDone(); factory = it.Next())
 		{
-			GraphicsFactory* factory = (GraphicsFactory*)link;
 			if (factory->MatchesID(GetTypeID<T>()))
 			{
 				return (ComponentFactory<T>*)factory;
@@ -44,5 +44,5 @@ public:
 	}
 
 private:
-	DList factories;
+	DList<GraphicsFactory> factories;
 };

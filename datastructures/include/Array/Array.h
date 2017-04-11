@@ -98,6 +98,15 @@ public:
 		return this->elements[index];
 	}
 
+	template <typename Function>
+	void Apply(Function& func)
+	{
+		for (auto& element : elements)
+		{
+			func(element);
+		}
+	}
+
 private:
 	std::vector<T> elements;
 };

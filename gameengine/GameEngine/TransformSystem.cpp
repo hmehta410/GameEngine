@@ -4,10 +4,10 @@
 
 void TransformSystem::Run(float)
 {
-	LinkedIterator it = this->transformFactory.GetHandles();
-	for (Link* node = it.First(); !it.IsDone(); node = it.Next())
+	auto it = this->transformFactory.GetHandles();
+	for (auto link = it.First(); !it.IsDone(); link = it.Next())
 	{
-		auto handle = (ComponentHandle<Transform>*)(PCSNode*)node;
+		ComponentHandle<Transform>* handle = (ComponentHandle<Transform>*)link;
 		assert((*handle)->GetPosition().IsPoint());
 		assert((*handle)->GetScale().IsVector());
 		const Vect& scale = (*handle)->GetScale();

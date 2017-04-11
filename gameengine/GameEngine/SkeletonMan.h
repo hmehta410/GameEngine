@@ -23,8 +23,8 @@ private:
 
 	static SkeletonMan* GetInstance();
 
-	DList skeletonTypes;
-	DList invBindPoses;
+	DList<SkeletonType> skeletonTypes;
+	DList<InverseBindPose> invBindPoses;
 };
 
 #endif SKELETON_MAN_H

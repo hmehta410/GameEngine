@@ -1,7 +1,6 @@
 #ifndef ANIMATION_CLIP_H
 #define ANIMATION_CLIP_H
 
-#include "PCSTree\PCSNode.h"
 #include "Keyframe.h"
 #include "GL\glew.h"
 #include "Array\Array.h"

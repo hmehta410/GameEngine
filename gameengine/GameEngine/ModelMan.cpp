@@ -233,11 +233,10 @@ namespace
 Model* ModelMan::FindMesh(const char* fileName)
 {
 	ModelMan* man = GetInstance();
-	LinkedIterator it = man->namedMeshes.GetIterator();
+	auto it = man->namedMeshes.GetIterator();
 
-	for (Link* link = it.First(); !it.IsDone(); link = it.Next())
+	for (ModelNode* node = it.First(); !it.IsDone(); node = it.Next())
 	{
-		ModelNode* node = (ModelNode*)link;
 		if (node->name == fileName)
 		{
 			return &node->model;
@@ -250,11 +249,10 @@ Model* ModelMan::FindMesh(const char* fileName)
 Model* ModelMan::FindGrid(int widthDivisions, int heightDivisions)
 {
 	ModelMan* man = GetInstance();
-	LinkedIterator it = man->gridNodes.GetIterator();
+	auto it = man->gridNodes.GetIterator();
 
-	for (Link* link = it.First(); !it.IsDone(); link = it.Next())
+	for (GridNode* node = it.First(); !it.IsDone(); node = it.Next())
 	{
-		GridNode* node = (GridNode*)link;
 		if (node->x == widthDivisions && node->y == heightDivisions)
 		{
 			return &node->model;

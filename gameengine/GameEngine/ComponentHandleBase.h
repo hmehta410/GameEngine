@@ -2,7 +2,7 @@
 
 #include "UniqueId.h"
 #include "List\Link.h"
-#include "List\DList.h"
+#include "List\DLinkedList.h"
 
 class Component;
 class RequirementNode;
@@ -28,10 +28,10 @@ protected:
 	Entity* entity;
 
 	//A list of things I depend on
-	DList requirements;
+	DLinkedList requirements;
 
 	//A list of things that depend on me
-	DList dependants;
+	DLinkedList dependants;
 
 private:
 	//Mark components that depend on me for delete

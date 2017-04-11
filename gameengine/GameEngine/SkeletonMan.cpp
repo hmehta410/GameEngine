@@ -85,10 +85,9 @@ SkeletonType* SkeletonMan::FindSkeleton(const char* filename)
 {
 	SkeletonMan* man = SkeletonMan::GetInstance();
 
-	LinkedIterator it = man->skeletonTypes.GetIterator();
-	for (Link* link = it.First(); !it.IsDone(); link = it.Next())
+	auto it = man->skeletonTypes.GetIterator();
+	for (SkeletonType* type = it.First(); !it.IsDone(); type = it.Next())
 	{
-		SkeletonType* type = (SkeletonType*)link;
 		if (type->Matches(filename))
 		{
 			return type;
@@ -103,10 +102,9 @@ InverseBindPose* SkeletonMan::FindInverseSkeleton(const char* filename)
 
 	SkeletonMan* man = SkeletonMan::GetInstance();
 
-	LinkedIterator it = man->invBindPoses.GetIterator();
-	for (Link* link = it.First(); !it.IsDone(); link = it.Next())
+	auto it = man->invBindPoses.GetIterator();
+	for (auto* pose = it.First(); !it.IsDone(); pose = it.Next())
 	{
-		InverseBindPose* pose = (InverseBindPose*)link;
 		if (pose->name == filename)
 		{
 			return pose;

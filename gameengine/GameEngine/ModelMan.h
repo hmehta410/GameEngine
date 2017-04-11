@@ -20,6 +20,6 @@ private:
 	ModelMan();
 	static ModelMan* GetInstance();
 
-	SList namedMeshes; //type MeshNode
-	SList gridNodes; //type GridNode;
+	SList<ModelNode> namedMeshes; //type ModelNode
+	SList<GridNode> gridNodes; //type GridNode;
 };

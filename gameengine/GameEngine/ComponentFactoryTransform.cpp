@@ -17,13 +17,11 @@ void ComponentFactory<Transform, typename Transform::FactorySpecialization>::Rem
 void ComponentFactory<Transform, typename Transform::FactorySpecialization>::CleanUp()
 {
 	bool handleIsReadyToBeRemoved = false;
-	LinkedIterator it = this->markedForDelete.GetIterator();
+	auto it = this->markedForDelete.GetIterator();
 
-	Link* link = it.First();
+	auto handle = it.First();
 	while (!it.IsDone())
 	{
-		ComponentHandleBase* handle = (ComponentHandleBase*)link;
-
 		//if handle has no components that depend on it
 		if (handle->dependants.IsEmpty())
 		{
@@ -37,7 +35,7 @@ void ComponentFactory<Transform, typename Transform::FactorySpecialization>::Cle
 			handle->MarkDependantsForDelete();
 		}
 
-		link = it.Next(); //move to the next component that needs to be deleted
+		handle = it.Next(); //move to the next component that needs to be deleted
 
 		if (handleIsReadyToBeRemoved)
 		{
@@ -61,7 +59,7 @@ bool ComponentFactory<Transform, typename Transform::FactorySpecialization>::IsM
 
 void ComponentFactory<Transform, typename Transform::FactorySpecialization>::MarkForDelete(ComponentHandle<Transform>* handle)
 {
-	this->markedForDelete.PushBack((ComponentHandleBase*)handle);
+	this->markedForDelete.PushBack(handle);
 }
 
 int ComponentFactory<Transform, typename Transform::FactorySpecialization>::Size() const
@@ -69,7 +67,7 @@ int ComponentFactory<Transform, typename Transform::FactorySpecialization>::Size
 	return transformHandleHierarchy.GetSize();
 }
 
-LinkedIterator ComponentFactory<Transform, typename Transform::FactorySpecialization>::GetHandles()
+ForwardIterator<PCSNode> ComponentFactory<Transform, typename Transform::FactorySpecialization>::GetHandles()
 {
 	return transformHandleHierarchy.GetIterator();
 }

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Array/Array.h"
-#include "Array/ArrayIterator.h"
+#include "List/DLinkedList.h"
 #include "ComponentHandleBase.h"
 #include <assert.h>
 
@@ -130,11 +130,17 @@ public:
 		return handle->GetContainer() == &handlesMarkedForDelete;
 	}
 
+	template <typename Function>
+	void Apply(Function& function)
+	{
+		components.Apply(function);
+	}
+
 private:
 	Array<T1> components;
 	Array<ComponentHandle<T1>*> handles;
 
-	DList handlesMarkedForDelete;
+	DLinkedList handlesMarkedForDelete;
 
 private: //methods
 	void RemoveHandle(ComponentHandleBase* handle)

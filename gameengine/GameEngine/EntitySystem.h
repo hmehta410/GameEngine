@@ -31,7 +31,7 @@ public:
 	virtual void Clean() override;
 
 private:
-	DList entities;
-	DList markedForDelete;
+	DList<Entity> entities;
+	DList<Entity> markedForDelete;
 };
 

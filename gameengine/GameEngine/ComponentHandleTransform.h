@@ -32,7 +32,7 @@ public:
 	}
 
 	virtual Transform* GetValue() override;
-	const Transform& GetValue() const;
+	Transform& GetReference();
 
 	void SetValue(const Transform& trans);
 

@@ -31,8 +31,8 @@ private:
 	static void Add(Camera* camera);
 	static int cameraID;
 
-	DList cameras; //typename Camera
-	LinkedIterator it;
+	DList<Camera> cameras; //typename Camera
+	ForwardIterator<Camera> it;
 
 	Camera* activeCam;
 };

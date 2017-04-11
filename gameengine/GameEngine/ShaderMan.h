@@ -18,7 +18,7 @@ private:
 	~ShaderMan();
 	static ShaderMan* getInstance();
 
-	DList shaders;
+	DList<ShaderObject> shaders;
 };
 
 #endif

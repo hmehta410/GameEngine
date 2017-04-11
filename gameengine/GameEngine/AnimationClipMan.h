@@ -20,5 +20,5 @@ private:
 
 	std::unique_ptr<AnimationClip> privLoadAnimationClip(const char* fileName);
 
-	DList animationClips; //type animation clip.
+	DList<AnimationClip> animationClips; 
 };

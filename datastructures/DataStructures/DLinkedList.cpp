@@ -1,18 +1,18 @@
-#include "List\DList.h"
+#include "List\DLinkedList.h"
 #include <assert.h>
 #include <utility>
 
-DList::DList()
+DLinkedList::DLinkedList()
 	: root(), size(0)
 {
 }
 
-DList::DList(DList&& list)
+DLinkedList::DLinkedList(DLinkedList&& list)
 {
 	*this = std::move(list);
 }
 
-DList& DList::operator=(DList&& list)
+DLinkedList& DLinkedList::operator=(DLinkedList&& list)
 {
 	this->size = list.size;
 	this->root = list.root;
@@ -28,7 +28,7 @@ DList& DList::operator=(DList&& list)
 	return *this;
 }
 
-void DList::InsertAfter(DLink* inNode, DLink* prevNode)
+void DLinkedList::InsertAfter(DLink* inNode, DLink* prevNode)
 {
 	assert(inNode->GetContainer() == nullptr);
 
@@ -48,7 +48,7 @@ void DList::InsertAfter(DLink* inNode, DLink* prevNode)
 	}
 }
 
-void DList::PushFront(DLink* inNode)
+void DLinkedList::PushFront(DLink* inNode)
 {
 	assert(inNode->GetContainer() == nullptr);
 
@@ -61,7 +61,7 @@ void DList::PushFront(DLink* inNode)
 	this->size++;
 }
 
-void DList::PushBack(DLink* inNode)
+void DLinkedList::PushBack(DLink* inNode)
 {
 	assert(inNode->GetContainer() == nullptr);
 
@@ -74,7 +74,7 @@ void DList::PushBack(DLink* inNode)
 	this->size++;
 }
 
-DLink* DList::PeekFront() const
+DLink* DLinkedList::PeekFront() const
 {
 	if (this->IsEmpty())
 	{
@@ -84,7 +84,7 @@ DLink* DList::PeekFront() const
 	return this->root.GetNext();
 }
 
-DLink* DList::PopFront()
+DLink* DLinkedList::PopFront()
 {
 	DLink* link = this->PeekFront();
 
@@ -93,7 +93,7 @@ DLink* DList::PopFront()
 	return link;
 }
 
-DLink* DList::PeekBack() const
+DLink* DLinkedList::PeekBack() const
 {
 	if (this->IsEmpty())
 	{
@@ -103,7 +103,7 @@ DLink* DList::PeekBack() const
 	return this->root.GetPrev();
 }
 
-DLink* DList::PopBack()
+DLink* DLinkedList::PopBack()
 {
 	DLink* link = this->PeekBack();
 
@@ -112,7 +112,7 @@ DLink* DList::PopBack()
 	return link;
 }
 
-void DList::Remove(DLink* inNode)
+void DLinkedList::Remove(DLink* inNode)
 {
 	if (inNode == nullptr)
 	{
@@ -131,7 +131,7 @@ void DList::Remove(DLink* inNode)
 	this->size--;
 }
 
-void DList::Clear()
+void DLinkedList::Clear()
 {
 	LinkedIterator it = this->GetIterator();
 	DLink* lastLink = nullptr;
@@ -150,7 +150,7 @@ void DList::Clear()
 	this->ResetToDefaultState();
 }
 
-void DList::DeleteList()
+void DLinkedList::DeleteList()
 {
 	LinkedIterator it = this->GetIterator();
 	for (Link* link = it.First(); !it.IsDone(); link = it.Next())
@@ -161,7 +161,7 @@ void DList::DeleteList()
 	this->ResetToDefaultState();
 }
 
-void DList::ResetToDefaultState()
+void DLinkedList::ResetToDefaultState()
 {
 	size = 0;
 	root.SetNext(&root);

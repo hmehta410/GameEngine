@@ -1,43 +1,48 @@
 #pragma once
+#include "List\SLinkedList.h"
 
-#include "List\Link.h"
-#include "List\LinkedIterator.h"
-
-/*
-A single linked list
-*/
+//templated version of Single linked list. T is still required to inherit from SLink
+template <typename T>
 class SList
 {
 public:
-	SList();
+	SList() {}
 	SList(const SList& other) = delete;
 	SList& operator=(const SList& other) = delete;
 
 	//Too risky to automatically delete every node.
 	//Some nodes may not have been individually dynamically allocated.
 	~SList() = default;
-	
-	void Insert(SLink* inNode, SLink* prevNode);
+
+	void Insert(T* inNode, T* prevNode) { list.Insert(inNode, prevNode); }
 	//O(n) operation. Try not to use much
-	void Remove(SLink* inNode);
+	void Remove(T* inNode) { list.Remove(inNode); }
 
-	void PushFront(SLink* inNode);
-	SLink* PopFront();
-	SLink* PeekFront() const;
+	void PushFront(T* inNode) { list.PushFront(inNode); }
+	T* PopFront() { return list.PopFront(); }
+	T* PeekFront() const { return list.PeekFront(); }
 
-	LinkedIterator GetIterator() const { return LinkedIterator(*this); }
+	ForwardIterator<T> GetIterator() const { return ForwardIterator<T>(list); }
 
-	const SLink* GetRoot() const { return &root; }
-	int Size() const { return size; }
+	int Size() const { return list.Size(); }
 
 	//This method will loop through and delete each node
 	//This may be risky as some nodes may not have been dynamically allocated.
-	void DeleteList();
+	void DeleteList() { list.DeleteList(); }
+
+	template <typename Function>
+	void Apply(Function& function)
+	{
+		SLink* root = list.GetRoot();
+		SLink* link = root->GetNext();
+		while (link != root)
+		{
+			T* element = (T*)link;
+			function(*element);
+			link = link->GetNext();
+		}
+	}
 
 private:
-	//I use a root and create a circular list. End is found equal to root
-	//instead of nullptr
-	SLink root;
-	int size;
+	SLinkedList list;
 };
-

@@ -26,7 +26,7 @@ Transform* ComponentHandle<Transform>::GetValue()
 }
 
 
-const Transform& ComponentHandle<Transform>::GetValue() const
+Transform& ComponentHandle<Transform>::GetReference()
 {
 	return this->transform;
 }

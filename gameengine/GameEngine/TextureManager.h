@@ -24,9 +24,13 @@ private:
 	TextureMan();
 	static TextureMan *GetInstance();
 
-	struct TextureNode; //type placed in textures list
+	struct TextureNode : public DLink
+	{
+		String name;
+		Texture texture;
+	};
 
-	DList textures; //type TextureNode
+	DList<TextureNode> textures;
 };
 
 #endif

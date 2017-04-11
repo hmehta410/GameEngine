@@ -14,14 +14,14 @@ ShaderMan::~ShaderMan()
 
 ShaderObject* ShaderMan::FindShader(const char* shaderName)
 {
-	DList& shaders = ShaderMan::getInstance()->shaders;
-	LinkedIterator it = shaders.GetIterator();
+	auto& shaders = ShaderMan::getInstance()->shaders;
+	auto it = shaders.GetIterator();
 
-	for (Link* node = it.First(); !it.IsDone(); node = it.Next())
+	for (ShaderObject* node = it.First(); !it.IsDone(); node = it.Next())
 	{
-		if (strcmp(((ShaderObject*)node)->GetName(), shaderName) == 0)
+		if (strcmp(node->GetName(), shaderName) == 0)
 		{
-			return (ShaderObject*)node;
+			return node;
 		}
 	}
 

@@ -1,62 +1,70 @@
 #pragma once
+#include "DLinkedList.h"
 
-#include "List\Link.h"
-#include "List\LinkedIterator.h"
-
-//A custom double linked list that uses inheritance to turn elements into nodes 
-//    rather than using nodes to contain elements. May not be suitable for all types
-//	  but definitely helps with O(1) removal
+//templated version of Double linked list. T is still required to inherit from DLink
+template <typename T>
 class DList
 {
 public:
-	DList();
-	DList(DList&& list);
-	DList& operator=(DList&& list);
+	DList() {}
+	DList(DList&& o) : list(std::move(o.list)) {}
+	DList& operator=(DList&& list) { *this = std::move(o.list); }
 
-	//some node types may or may not be copyable
-	DList(const DList& other) = delete;
-	DList& operator=(const DList& other) = delete;
+	DList(const DList&) = delete;
+	DList& operator=(const DList&) = delete;
 
 	//Too risky to automatically delete every node.
 	//Some nodes may not have been individually dynamically allocated.
-	~DList() = default;
-	
-	//Inserts inNode after prevNode. If prevNode is null, inNode will be pushed to front
-	void InsertAfter(DLink* inNode, DLink* prevNode);
+	~DList() {};
+
+	void InsertAfter(T* inNode, T* prevNode){
+		list.InsertAfter(inNode, prevNode);
+	}
 
 	//Removes inNode from the list. Safely ignores nullptr
-	void Remove(DLink* inNode);
+	void Remove(T* inNode){
+		list.Remove(inNode);
+	}
 
-	void PushFront(DLink* inNode);
-	void PushBack(DLink* inNode);
-	DLink* PopFront();
-	DLink* PopBack();
-	DLink* PeekFront() const;
-	DLink* PeekBack() const;
+	void PushFront(T* inNode){
+		list.PushFront(inNode);
+	}
+
+	void PushBack(T* inNode) {
+		list.PushBack(inNode); 
+	}
+
+	T* PopFront() { return (T*)list.PopFront(); }
+	T* PopBack() { return (T*)list.PopBack(); }
+	T* PeekFront() const { return (T*)list.PeekFront(); }
+	T* PeekBack() const { return (T*)list.PeekBack(); }
 
 	//Removes all nodes from list but does not delete any memory
-	void Clear();
+	void Clear() { list.Clear(); }
 
 	//This method will loop through and delete each node
 	//This may be risky as some nodes may not have been dynamically allocated.
-	void DeleteList();
+	void DeleteList() { list.DeleteList(); }
 
-	//Iterators
-	inline LinkedIterator GetIterator() const { return LinkedIterator(*this); }
-	inline LinkedReverseIterator GetReverseIterator() const 
-		{ return LinkedReverseIterator(*this); }
+	ForwardIterator<T> GetIterator() { return ForwardIterator<T>(list); };
+	ReverseIterator<T> GetReverseIterator() { return ReverseIterator<T>(list); };
 
-	//Accessors
-	inline const DLink* GetRoot() const { return &root; }
-	inline int Size() const { return size; }
-	inline bool IsEmpty() const { return size == 0; }
+	int Size() const { return list.Size(); }
+	bool IsEmpty() const { return list.IsEmpty(); }
+
+	template <typename Function>
+	void Apply(Function& function)
+	{
+		DLink* root = list.GetRoot();
+		DLink* link = root->GetNext();
+		while (link != root)
+		{
+			T* element = (T*)link;
+			function(*element);
+			link = link->GetNext();
+		}
+	}
 
 private:
-	//uses root to create a circular list with the end = root rather than nullptr
-	DLink root;
-	int size;
-
-	//destructively set size and root back to initialized state.
-	void ResetToDefaultState();
+	DLinkedList list;
 };
-

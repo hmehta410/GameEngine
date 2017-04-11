@@ -8,10 +8,9 @@ GraphicsSystem::~GraphicsSystem()
 
 void GraphicsSystem::Run(float)
 {
-	LinkedIterator it = this->factories.GetIterator();
-	for (Link* link = it.First(); !it.IsDone(); link = it.Next())
+	auto it = this->factories.GetIterator();
+	for (GraphicsFactory* shaderGroup = it.First(); !it.IsDone(); shaderGroup = it.Next())
 	{
-		GraphicsFactory* shaderGroup = (GraphicsFactory*)link;
 		shaderGroup->Draw();
 	}
 }
@@ -33,10 +32,9 @@ void GraphicsSystem::Reload()
 
 void GraphicsSystem::Clean()
 {
-	LinkedIterator it = this->factories.GetIterator();
-	for (Link* link = it.First(); !it.IsDone(); link = it.Next())
+	auto it = this->factories.GetIterator();
+	for (auto factory = it.First(); !it.IsDone(); factory = it.Next())
 	{
-		GraphicsFactory* factory = (GraphicsFactory*)link;
 		factory->Clean();
 	}
 }

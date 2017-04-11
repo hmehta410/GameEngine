@@ -89,22 +89,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DList.cpp" />
+    <ClCompile Include="DLinkedList.cpp" />
     <ClCompile Include="LinkedIterator.cpp" />
     <ClCompile Include="PCSTree.cpp" />
-    <ClCompile Include="SList.cpp" />
+    <ClCompile Include="SLinkedList.cpp" />
     <ClCompile Include="String.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Array\Array.h" />
+    <ClInclude Include="..\include\List\DLinkedList.h" />
     <ClInclude Include="..\include\List\DList.h" />
     <ClInclude Include="..\include\List\Link.h" />
     <ClInclude Include="..\include\List\LinkedIterator.h" />
+    <ClInclude Include="..\include\List\SLinkedList.h" />
     <ClInclude Include="..\include\List\SList.h" />
     <ClInclude Include="..\include\PCSTree\PCSNode.h" />
     <ClInclude Include="..\include\PCSTree\PCSSerializer.h" />
     <ClInclude Include="..\include\PCSTree\PCSTree.h" />
+    <ClInclude Include="..\include\PCSTree\Tree.h" />
     <ClInclude Include="..\include\String\String.h" />
+    <ClInclude Include="Tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

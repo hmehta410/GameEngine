@@ -1,12 +1,12 @@
-#include "List\SList.h"
+#include "List\SLinkedList.h"
 #include <assert.h>
 
-SList::SList()
+SLinkedList::SLinkedList()
 	: root(), size(0)
 {
 }
 
-void SList::Insert(SLink* inNode, SLink* prevNode)
+void SLinkedList::Insert(SLink* inNode, SLink* prevNode)
 {
 	assert(inNode->GetContainer() == nullptr);
 	if (nullptr == prevNode)
@@ -22,7 +22,7 @@ void SList::Insert(SLink* inNode, SLink* prevNode)
 	}
 }
 
-void SList::PushFront(SLink* inNode)
+void SLinkedList::PushFront(SLink* inNode)
 {
 	assert(inNode->GetContainer() == nullptr);
 	inNode->SetNext(root.GetNext());
@@ -31,7 +31,7 @@ void SList::PushFront(SLink* inNode)
 	size++;
 }
 
-SLink* SList::PopFront()
+SLink* SLinkedList::PopFront()
 {
 	SLink* link = nullptr;
 	
@@ -46,7 +46,7 @@ SLink* SList::PopFront()
 	return link;
 }
 
-void SList::Remove(SLink* inNode)
+void SLinkedList::Remove(SLink* inNode)
 {
 	assert(inNode->GetContainer() == this);
 
@@ -65,7 +65,7 @@ void SList::Remove(SLink* inNode)
 	}
 }
 
-SLink* SList::PeekFront() const
+SLink* SLinkedList::PeekFront() const
 {
 	if (size != 0)
 	{
@@ -74,7 +74,7 @@ SLink* SList::PeekFront() const
 	return nullptr;
 }
 
-void SList::DeleteList()
+void SLinkedList::DeleteList()
 {
 	LinkedIterator it = this->GetIterator();
 	for (Link* link = it.First(); !it.IsDone(); link = it.Next())

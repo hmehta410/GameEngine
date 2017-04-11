@@ -36,14 +36,12 @@ void EntitySystem::Run(float)
 
 void EntitySystem::Clean()
 {
-	LinkedIterator it = this->markedForDelete.GetIterator();
+	auto it = this->markedForDelete.GetIterator();
 
 	bool entityIsReadyToBeDeleted = false;
-	Link* link = it.First();
+	Entity* entity = it.First();
 	while (!it.IsDone())
 	{
-		Entity* entity = (Entity*)link;
-
 		if (entity->components.Size() == 0)
 		{
 			entityIsReadyToBeDeleted = true;
@@ -53,7 +51,7 @@ void EntitySystem::Clean()
 			entity->MarkComponentsForDelete();
 		}
 
-		link = it.Next();
+		entity = it.Next();
 
 		if (entityIsReadyToBeDeleted)
 		{

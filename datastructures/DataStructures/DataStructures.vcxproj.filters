@@ -21,12 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DList.cpp">
-      <Filter>LinkedList\DoubleLinked</Filter>
-    </ClCompile>
-    <ClCompile Include="SList.cpp">
-      <Filter>LinkedList\SingleLinked</Filter>
-    </ClCompile>
     <ClCompile Include="LinkedIterator.cpp">
       <Filter>LinkedList</Filter>
     </ClCompile>
@@ -36,6 +30,12 @@
     <ClCompile Include="String.cpp">
       <Filter>String</Filter>
     </ClCompile>
+    <ClCompile Include="DLinkedList.cpp">
+      <Filter>LinkedList\DoubleLinked</Filter>
+    </ClCompile>
+    <ClCompile Include="SLinkedList.cpp">
+      <Filter>LinkedList\SingleLinked</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\List\Link.h">
@@ -43,12 +43,6 @@
     </ClInclude>
     <ClInclude Include="..\include\List\LinkedIterator.h">
       <Filter>LinkedList</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\List\DList.h">
-      <Filter>LinkedList\DoubleLinked</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\List\SList.h">
-      <Filter>LinkedList\SingleLinked</Filter>
     </ClInclude>
     <ClInclude Include="..\include\PCSTree\PCSNode.h">
       <Filter>PCSTree</Filter>
@@ -64,6 +58,24 @@
     </ClInclude>
     <ClInclude Include="..\include\String\String.h">
       <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\List\DLinkedList.h">
+      <Filter>LinkedList\DoubleLinked</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\List\SLinkedList.h">
+      <Filter>LinkedList\SingleLinked</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
+      <Filter>PCSTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\List\DList.h">
+      <Filter>LinkedList\DoubleLinked</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\List\SList.h">
+      <Filter>LinkedList\SingleLinked</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\PCSTree\Tree.h">
+      <Filter>PCSTree</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

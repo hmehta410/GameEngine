@@ -21,10 +21,9 @@ AnimationClip* AnimationClipMan::LoadClip(const char* fileName)
 {
 	//search to see if animation clip was previously loaded
 	AnimationClipMan* man = GetInstance();
-	LinkedIterator it = man->animationClips.GetIterator();
-	for (Link* link = it.First(); !it.IsDone(); link = it.Next())
+	auto it = man->animationClips.GetIterator();
+	for (auto clip = it.First(); !it.IsDone(); clip = it.Next())
 	{
-		AnimationClip* clip = (AnimationClip*)link;
 		if (clip->name == fileName)
 		{
 			return clip;

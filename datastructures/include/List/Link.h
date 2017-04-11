@@ -4,6 +4,7 @@
 //own container. It will mainly be used as a pure address for comparison to see
 //if the link is currently residing in another container, is free, or is already
 //part of the container it's being added to.
+
 class Link
 {
 public:
@@ -38,7 +39,7 @@ protected:
 private:
 	SLink* next;
 	friend class LinkedIterator;
-	friend class SList;
+	friend class SLinkedList;
 };
 
 //used for doubly linked lists
@@ -58,5 +59,5 @@ protected:
 
 private:
 	friend class LinkedReverseIterator;
-	friend class DList;
+	friend class DLinkedList;
 };

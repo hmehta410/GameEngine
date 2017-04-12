@@ -10,15 +10,15 @@
 class GameObject;
 class GraphicsObject;
 class Model;
-class System;
+class SystemBase;
 
 //showing off some textured models over a couple different cameras
 class ModelViewerScene : public Scene
 {
 public:
 	ModelViewerScene(int width, int height);
-	void Update(float time) override;
-	void Draw(float time) override;
+	void Update() override;
+	void Draw() override;
 	void Clean() override;
 
 private:

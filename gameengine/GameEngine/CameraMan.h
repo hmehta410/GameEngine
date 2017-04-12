@@ -20,7 +20,7 @@ public:
 	static Camera* CreateCamera();
 	static void Remove(Camera* camera);
 	static void Draw(void);
-	static void Update(float currentTime);
+	static void Update();
 	static Camera* CycleCamera();
 	static Camera* GetActive();
 	static void SetActive(Camera* camera);

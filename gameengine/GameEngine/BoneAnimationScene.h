@@ -4,7 +4,7 @@
 #include "Scene.h"
 #include "Time\Timer.h"
 #include "Array\Array.h"
-#include "System.h"
+#include "SystemBase.h"
 #include <memory>
 
 class AnimationClip;
@@ -17,14 +17,14 @@ class BoneAnimationScene : public Scene
 public:
 	BoneAnimationScene(int width, int height);
 
-	void Update(float time) override;
-	virtual void Draw(float) override;
+	void Update() override;
+	virtual void Draw() override;
 	virtual void Clean() override;
 
 private:
 	AnimationClip* loadAnimationClip(const char* file, const char* skeletonName);
 
-	Array<std::unique_ptr<System>> systems;
+	Array<std::unique_ptr<SystemBase>> systems;
 	std::unique_ptr<GraphicsSystem> graphicsSystem; 
 };
 

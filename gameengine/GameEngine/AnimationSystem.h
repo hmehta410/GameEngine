@@ -1,6 +1,6 @@
 #pragma once
 
-#include "System.h"
+#include "SystemBase.h"
 #include "ComponentFactory.h"
 #include "ComponentHandle.h"
 #include "Time/Time.h"
@@ -11,7 +11,7 @@ AnimationSystem creates ComponentHandle<Animation> and passes them out. It runs 
 interpolating between two keyframes from a clip in each Animation. It then outputs
 the interpolated keyframe into the skeleton of the Animation.
 */
-class AnimationSystem : public System
+class AnimationSystem : public SystemBase
 {
 public:
 
@@ -26,7 +26,7 @@ public:
 		ComponentHandle<Animation>* animationB); 
 
 	virtual void Reload() override;
-	virtual void Run(float time) override;
+	void Run() override;
 
 	virtual void Clean() override;
 

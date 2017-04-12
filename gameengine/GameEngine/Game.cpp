@@ -5,6 +5,7 @@
 #include "CameraMan.h"
 #include "ShaderMan.h"
 #include "SkinnedAnimationScene.h"
+#include "TimeMan.h"
 
 Game::Game(const char* windowName, int width, int height)
 	:Engine(windowName, width, height)
@@ -43,10 +44,12 @@ float lastTime = 0.0f;
 //      Use this function to control process order
 //      Input, AI, Physics, Animation, and Graphics
 //-----------------------------------------------------------------------------
-void Game::Update(float currentTime)
+void Game::Update(float deltaTime)
 {
-	scene->Update(currentTime);
-	CameraMan::Update(currentTime);
+	Time deltaT = Time(TIME_ONE_SECOND) * deltaTime;
+	TimerMan::Update(deltaT);
+	scene->Update();
+	CameraMan::Update();
 }
 
 //-----------------------------------------------------------------------------
@@ -57,7 +60,7 @@ void Game::Update(float currentTime)
 //-----------------------------------------------------------------------------
 void Game::Draw()
 {
-	scene->Draw(0.0);
+	scene->Draw();
 }
 
 //-----------------------------------------------------------------------------

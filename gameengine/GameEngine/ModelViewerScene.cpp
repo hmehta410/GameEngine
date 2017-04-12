@@ -110,12 +110,12 @@ ModelViewerScene::ModelViewerScene(int width, int height)
 	CreateTexturedModel(warbearModel, warbearTex, scale, pos, rot);
 }
 
-void ModelViewerScene::Update(float time)
+void ModelViewerScene::Update()
 {
 	UpdateCameraControls();
 
-	transformSystem->Run(time);
-	entitySystem->Run(time); //not strictly necessary since it doesn't actually do anything
+	transformSystem->Run();
+	entitySystem->Run(); //not strictly necessary since it doesn't actually do anything
 
 	Keyboard* board = InputMan::GetKeyboard();
 	if (board->IsOnKeyRelease(KEY_C))
@@ -124,9 +124,9 @@ void ModelViewerScene::Update(float time)
 	}
 }
 
-void ModelViewerScene::Draw(float time)
+void ModelViewerScene::Draw()
 {
-	graphicsSystem->Run(time);
+	graphicsSystem->Run();
 }
 
 void ModelViewerScene::Clean()

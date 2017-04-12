@@ -1,5 +1,5 @@
 #pragma once
-#include "System.h"
+#include "SystemBase.h"
 #include "List\DList.h"
 
 class Entity;
@@ -7,7 +7,7 @@ class Entity;
 /*
 Doesn't actually do anything other than manage the lifetime of an entity.
 */
-class EntitySystem : public System
+class EntitySystem : public SystemBase
 {
 public:
 	EntitySystem();
@@ -25,7 +25,7 @@ public:
 	virtual void Reload() override;
 
 	//does nothing
-	virtual void Run(float time) override;
+	virtual void Run() override;
 
 	//Cleans up any entities marked for delete
 	virtual void Clean() override;

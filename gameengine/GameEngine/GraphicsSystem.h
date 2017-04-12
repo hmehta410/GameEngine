@@ -1,5 +1,5 @@
 #pragma once
-#include "System.h"
+#include "SystemBase.h"
 #include "UniqueId.h"
 #include "ComponentFactoryGraphicsObject.h"
 #include "List/DList.h"
@@ -14,13 +14,13 @@ add factories for any of the derived graphics objects used. The user will instan
 components through the factories and then the system will act on the factories' pool
 of components.
 */
-class GraphicsSystem : public System
+class GraphicsSystem : public SystemBase
 {
 public:
 	~GraphicsSystem();
 
 	virtual void Reload() override;
-	void Run(float time) override;
+	void Run() override;
 	virtual void Clean() override;
 
 	void AddFactory(std::unique_ptr<GraphicsFactory> group);

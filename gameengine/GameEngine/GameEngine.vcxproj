@@ -119,6 +119,7 @@
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="SkeletonType.cpp" />
     <ClCompile Include="SkinnedAnimationScene.cpp" />
+    <ClCompile Include="TimeMan.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="TransformSystem.cpp" />
     <ClCompile Include="ShaderMan.cpp" />
@@ -161,6 +162,8 @@
     <ClInclude Include="Skeleton.h" />
     <ClInclude Include="SkeletonType.h" />
     <ClInclude Include="SkinnedAnimationScene.h" />
+    <ClInclude Include="System.h" />
+    <ClInclude Include="TimeMan.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="TransformSystem.h" />
     <ClInclude Include="SolidShadeGraphicsObject.h" />
@@ -177,7 +180,7 @@
     <ClInclude Include="ShaderMan.h" />
     <ClInclude Include="ShaderObject.h" />
     <ClInclude Include="SkeletonMan.h" />
-    <ClInclude Include="System.h" />
+    <ClInclude Include="SystemBase.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="UniqueId.h" />

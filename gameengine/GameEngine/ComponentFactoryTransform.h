@@ -9,7 +9,6 @@
 
 /*
 Specialized ComponentFactory. Creates TransformHandles and places them in a tree.
-
 */
 template<>
 class ComponentFactory<Transform, typename Transform::FactorySpecialization>

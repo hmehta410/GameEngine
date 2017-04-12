@@ -6,7 +6,7 @@ GraphicsSystem::~GraphicsSystem()
 	this->factories.DeleteList();
 }
 
-void GraphicsSystem::Run(float)
+void GraphicsSystem::Run()
 {
 	auto it = this->factories.GetIterator();
 	for (GraphicsFactory* shaderGroup = it.First(); !it.IsDone(); shaderGroup = it.Next())

@@ -2,6 +2,7 @@
 #include "Engine.h"
 #include "Scene.h"
 #include <memory>
+#include "Time\Time.h"
 
 class Game : public Engine
 {

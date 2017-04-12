@@ -86,7 +86,7 @@ namespace
 //representation of the bone will be large enough to stretch from one joint to another.
 //This alters the world transform of each bone purely for visualization purposes.
 //It must be run after the transform systems corresponding to each skeleton.
-void SkeletalSystem::Run(float /*time*/)
+void SkeletalSystem::Run()
 {
 	Array<Skeleton> skeletons = skeletonFactory.GetComponents();
 	for (auto& skeleton : skeletons)

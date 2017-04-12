@@ -30,7 +30,7 @@ void EntitySystem::Reload()
 {
 }
 
-void EntitySystem::Run(float)
+void EntitySystem::Run()
 {
 }
 

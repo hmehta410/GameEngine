@@ -172,19 +172,19 @@ BoneAnimationScene::BoneAnimationScene(int width, int height)
 	CreateTeddyAnimation(teddyWalk, pos, rot, color);
 }
 
-void BoneAnimationScene::Update(float time)
+void BoneAnimationScene::Update()
 {
 	UpdateCameraControls();
 
 	for (auto& system : this->systems)
 	{
-		system->Run(time);
+		system->Run();
 	}
 }
 
-void BoneAnimationScene::Draw(float time)
+void BoneAnimationScene::Draw()
 {
-	graphicsSystem->Run(time);
+	graphicsSystem->Run();
 }
 
 void BoneAnimationScene::Clean()

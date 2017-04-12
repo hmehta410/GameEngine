@@ -2,7 +2,7 @@
 #include "ComponentFactoryTransform.h"
 #include "List/LinkedIterator.h"
 
-void TransformSystem::Run(float)
+void TransformSystem::Run()
 {
 	auto it = this->transformFactory.GetHandles();
 	for (auto link = it.First(); !it.IsDone(); link = it.Next())

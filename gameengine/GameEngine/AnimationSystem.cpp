@@ -6,13 +6,14 @@
 #include "ComponentHandle.h"
 #include "Animation.h"
 #include "Math\QuatApp.h"
+#include "TimeMan.h"
 
-void AnimationSystem::Run(float deltaTime)
+void AnimationSystem::Run()
 {
 	Array<Animation>& components = animationFactory.GetComponents();
 	for (Animation& animation : components)
 	{
-		this->Run(animation, Time(Duration::TIME_ONE_SECOND) *deltaTime);
+		this->Run(animation, TimerMan::GetDeltaTime());
 	}
 }
 

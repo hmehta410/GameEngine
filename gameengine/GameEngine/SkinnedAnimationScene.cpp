@@ -1,5 +1,5 @@
 #include "SkinnedAnimationScene.h"
-#include "System.h"
+#include "SystemBase.h"
 #include "GraphicsSystem.h"
 #include "Camera.h"
 #include "CameraMan.h"
@@ -147,17 +147,17 @@ SkinnedAnimationScene::SkinnedAnimationScene(int width, int height)
 	CreateTeddyAnimation(teddyWalk, pos, rot, color);
 }
 
-void SkinnedAnimationScene::Update(float time)
+void SkinnedAnimationScene::Update()
 {
 	UpdateCameraControls();
 
 	for (auto& system : systems)
 	{
-		system->Run(time);
+		system->Run();
 	}
 }
 
-void SkinnedAnimationScene::Draw(float)
+void SkinnedAnimationScene::Draw()
 {
 }
 

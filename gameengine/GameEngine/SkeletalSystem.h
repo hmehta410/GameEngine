@@ -1,6 +1,6 @@
 #pragma once
 
-#include "System.h"
+#include "SystemBase.h"
 #include "ComponentFactory.h"
 #include "ComponentHandle.h"
 #include "Skeleton.h"
@@ -17,7 +17,7 @@ and should othwise not be run. It must run after the TransformSystem to work cor
 TODO: It may be a good idea to break out that functionality into a SkeletonVisualizationSystem
 in the future
 */
-class SkeletalSystem : public System
+class SkeletalSystem : public SystemBase
 {
 public:
 	SkeletalSystem(TransformSystem* system);
@@ -25,7 +25,7 @@ public:
 	ComponentHandle<Skeleton>* CreateSkeleton(SkeletonType* type, ComponentHandle<Transform>* parent = nullptr);
 
 	virtual void Reload() override;
-	virtual void Run(float time) override;
+	virtual void Run() override;
 	virtual void Clean() override;
 
 	//You can get or set which transform system newly created skeletons will be

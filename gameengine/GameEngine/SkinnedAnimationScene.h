@@ -4,7 +4,7 @@
 #include "Array\Array.h"
 #include <memory>
 
-class System;
+class SystemBase;
 class SkeletalSystem;
 
 //A scene showing off skinned animation of the teddy and humanoid rigs/meshes
@@ -13,12 +13,12 @@ class SkinnedAnimationScene : public Scene
 public:
 	SkinnedAnimationScene(int width, int height);
 	
-	virtual void Update(float time) override;
-	virtual void Draw(float time) override;
+	virtual void Update() override;
+	virtual void Draw() override;
 	virtual void Clean() override;
 
 private:
 
-	Array<std::unique_ptr<System>> systems;
+	Array<std::unique_ptr<SystemBase>> systems;
 	std::unique_ptr<SkeletalSystem> skeletalSystem;
 };

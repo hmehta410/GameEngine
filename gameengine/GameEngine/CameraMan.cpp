@@ -67,9 +67,8 @@ void CameraMan::Draw(void)
 {
 }
 
-void CameraMan::Update(float currentTime)
+void CameraMan::Update()
 {
-	currentTime;
 	CameraMan* man = CameraMan::GetInstance();
 	if (man->activeCam != nullptr)
 	{

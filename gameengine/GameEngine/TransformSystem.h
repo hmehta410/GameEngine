@@ -1,6 +1,6 @@
 #pragma once
 
-#include "System.h"
+#include "SystemBase.h"
 #include <vector>
 #include "List\DLinkedList.h"
 #include "Transform.h"
@@ -12,11 +12,11 @@
 //localWorld matrix from the transform's pos, rot, and scale
 //and the globalWorld Matrix from the local and parent's world matrix.
 //The hierarchy is actually implemented in the specialized factory.
-class TransformSystem : public System
+class TransformSystem : public SystemBase
 {
 public: 
 	 
-	void Run(float time) override;
+	void Run() override;
 	virtual void Reload() override;
 	virtual void Clean() override;
 

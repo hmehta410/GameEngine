@@ -6,7 +6,7 @@ This game engine is a work in progress that has been adapted from the object-ori
 This engine currently has Transform, Graphics, Skeletal, and Animation systems. It has three scenes showing off the various systems: the ModelViewer scene shows several different textured models, the BoneAnimationScene shows the animation of a human and teddy skeleton, and the SkinnedAnimation scene extends the BoneAnimationScene by skinning a human and teddy mesh to the skeletal animation.
 
 #User Instructions
-This was built using Visual Studio 2013 and should compile in Debug or Release using the solution found at gameengine/GameEngine.sln. It should also be compatable with future versions of visual studio. It was made to run on windows and will likely not compile correctly for unix based systems without some additional work.
+This can be built using visual studio 2017 and should compile in Debug or Release using the solution found at gameengine/GameEngine.sln. It should also be compatable with future versions of visual studio. It was made to run on windows and will not compile correctly for unix based systems without some additional work.
 
 There are currently three different Scenes that can be run but they need to be changed by physically going into the game.cpp file and commenting/uncommenting the different lines in the Game::LoadContent() method:
 

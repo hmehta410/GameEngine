@@ -40,7 +40,8 @@ class System : public SystemBase
 public:
 	System(Container* c, const Function& fun)
 		:container(c), function(fun)
-	{}
+	{
+	}
 
 	template <typename... Args>
 	System(Container* c, Args&&... args)

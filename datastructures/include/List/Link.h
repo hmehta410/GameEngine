@@ -14,7 +14,7 @@ public:
 	void* GetContainer() const { return container; }
 
 protected:
-	void SetContainer(void* container) { this->container = container; }
+	void SetContainer(void* aContainer) { this->container = aContainer; }
 
 private:
 	void* container;

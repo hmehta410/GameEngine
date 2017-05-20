@@ -72,6 +72,9 @@
     <Filter Include="Source Files\Systems\GraphicsSystem\GraphicsObjects">
       <UniqueIdentifier>{d7a2f620-8fca-436e-ae4b-32a62a81061b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Systems\CollisionSystem">
+      <UniqueIdentifier>{319033b2-b4a7-4cbf-9878-581ca4c0f7f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -198,7 +201,7 @@
       <Filter>Source Files\Systems\GraphicsSystem</Filter>
     </ClCompile>
     <ClCompile Include="TimeMan.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

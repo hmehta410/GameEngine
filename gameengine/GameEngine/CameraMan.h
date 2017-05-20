@@ -32,7 +32,7 @@ private:
 	static int cameraID;
 
 	DList<Camera> cameras; //typename Camera
-	ForwardIterator<Camera> it;
+	ForwardIterator<Camera> forwardIt;
 
 	Camera* activeCam;
 };

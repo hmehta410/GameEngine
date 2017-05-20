@@ -65,11 +65,11 @@ void SolidShadeGraphicsObject::SetGPUData()
 	glUniformMatrix4fv(this->worldMatrixIndex, 1, GL_FALSE, (float *)&world);
 
 	const Vect& lightColor = lightSource.GetColor();
-	const Vect& color = *this->color;
+	const Vect& meshColor = *this->color;
 	const Vect& pos = lightSource.GetPosition();
 	glUniform4fv(this->lightColorIndex, 1, (float*)&lightColor);
 	glUniform3fv(this->lightPosIndex, 1, (float*)&pos);
-	glUniform4fv(this->diffuseColorIndex, 1, (float*)&color);
+	glUniform4fv(this->diffuseColorIndex, 1, (float*)&meshColor);
 }
 
 void SolidShadeGraphicsObject::Draw()

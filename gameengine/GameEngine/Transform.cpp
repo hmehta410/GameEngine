@@ -14,27 +14,27 @@ Transform::Transform(const Vect& position, const Quat& rotation, const Vect& sca
 {
 }
 
-void Transform::SetPosition(const Vect& position)
+void Transform::SetPosition(const Vect& aPosition)
 {
 	if (!lockPosition)
 	{
-		this->position = position;
+		this->position = aPosition;
 	}
 }
 
-void Transform::SetRotation(const Quat& rotation)
+void Transform::SetRotation(const Quat& aRotation)
 {
 	if (!lockRotation)
 	{
-		this->rotation = rotation;
+		this->rotation = aRotation;
 	}
 }
 
-void Transform::SetScale(const Vect& scale)
+void Transform::SetScale(const Vect& aScale)
 {
 	if (!lockScale)
 	{
-		this->scale = scale;
+		this->scale = aScale;
 	}
 }
 

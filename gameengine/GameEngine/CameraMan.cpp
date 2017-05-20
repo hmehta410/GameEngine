@@ -6,7 +6,7 @@
 int CameraMan::cameraID = 0;
 
 CameraMan::CameraMan()
-	: cameras(), it(cameras.GetIterator()), activeCam(nullptr)
+	: cameras(), forwardIt(cameras.GetIterator()), activeCam(nullptr)
 {
 }
 
@@ -37,11 +37,11 @@ Camera* CameraMan::CycleCamera()
 {
 	CameraMan* man = CameraMan::GetInstance();
 
-	man->activeCam = man->it.Next(); 
+	man->activeCam = man->forwardIt.Next();
 
-	if (man->it.IsDone())
+	if (man->forwardIt.IsDone())
 	{
-		man->activeCam = man->it.First();
+		man->activeCam = man->forwardIt.First();
 	}
 
 	return man->activeCam;
@@ -52,8 +52,8 @@ void CameraMan::Add(Camera* camera)
 	CameraMan* man = CameraMan::GetInstance();
 
 	man->cameras.PushBack(camera);
-	man->it = man->cameras.GetIterator();
-	man->activeCam = man->it.First();
+	man->forwardIt = man->cameras.GetIterator();
+	man->activeCam = man->forwardIt.First();
 }
 
 void CameraMan::Remove(Camera* camera)

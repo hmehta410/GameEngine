@@ -76,8 +76,8 @@ void Quat::Set(Rot3AxisType, float x, float y, float z)
 
 void Quat::Set(RotOrientType type, const Vect& direction_of_flight, const Vect& up)
 {
-	Matrix m(type, direction_of_flight, up);
-	this->Set(m);
+	Matrix matrix(type, direction_of_flight, up);
+	this->Set(matrix);
 }
 
 void Quat::Set(RotType rot_type, float radians)
@@ -120,41 +120,41 @@ void Quat::Set(MatrixSpecialType type)
 	}
 }
 
-void Quat::Set(const Matrix& m)
+void Quat::Set(const Matrix& matrix)
 {
-	float tr = m[m0] + m[m5] + m[m10];
+	float tr = matrix[m0] + matrix[m5] + matrix[m10];
 	float s;
 
 	if (tr > 0.0f)
 	{
 		s = 2.0f * sqrtf(tr + 1.0f);
 		this->qw = 0.25f * s;
-		this->qx = -(m[m9] - m[m6]) / s;
-		this->qy = -(m[m2] - m[m8]) / s;
-		this->qz = -(m[m4] - m[m1]) / s;
+		this->qx = -(matrix[m9] - matrix[m6]) / s;
+		this->qy = -(matrix[m2] - matrix[m8]) / s;
+		this->qz = -(matrix[m4] - matrix[m1]) / s;
 	}
-	else if (m[m0] > m[m5] && m[m0] > m[m10])
+	else if (matrix[m0] > matrix[m5] && matrix[m0] > matrix[m10])
 	{
-		s = 2.0f * sqrtf(1.0f + m[m0] - m[m5] - m[m10]);
-		this->qw = -(m[m9] - m[m6]) / s;
+		s = 2.0f * sqrtf(1.0f + matrix[m0] - matrix[m5] - matrix[m10]);
+		this->qw = -(matrix[m9] - matrix[m6]) / s;
 		this->qx = 0.25f * s;
-		this->qy = (m[m1] + m[m4]) / s;
-		this->qz = (m[m2] + m[m8]) / s;
+		this->qy = (matrix[m1] + matrix[m4]) / s;
+		this->qz = (matrix[m2] + matrix[m8]) / s;
 	}
-	else if (m[m5] > m[m10])
+	else if (matrix[m5] > matrix[m10])
 	{
-		s = 2.0f * sqrtf(1.0f + m[m5] - m[m0] - m[m10]);
-		this->qw = -(m[m2] - m[m8]) / s;
-		this->qx = (m[m1] + m[m4]) / s;
+		s = 2.0f * sqrtf(1.0f + matrix[m5] - matrix[m0] - matrix[m10]);
+		this->qw = -(matrix[m2] - matrix[m8]) / s;
+		this->qx = (matrix[m1] + matrix[m4]) / s;
 		this->qy = 0.25f * s;
-		this->qz = (m[m6] + m[m9]) / s;
+		this->qz = (matrix[m6] + matrix[m9]) / s;
 	}
 	else
 	{
-		s = 2.0f * sqrtf(1.0f + m[m10] - m[m0] - m[m5]);
-		this->qw = -(m[m4] - m[m1]) / s;
-		this->qx = (m[m2] + m[m8]) / s;
-		this->qy = (m[m6] + m[m9]) / s;
+		s = 2.0f * sqrtf(1.0f + matrix[m10] - matrix[m0] - matrix[m5]);
+		this->qw = -(matrix[m4] - matrix[m1]) / s;
+		this->qx = (matrix[m2] + matrix[m8]) / s;
+		this->qy = (matrix[m6] + matrix[m9]) / s;
 		this->qz = 0.25f * s;
 	}
 }

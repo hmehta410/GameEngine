@@ -29,14 +29,14 @@ const Model* GraphicsObject::GetModel() const
 	return this->model;
 }
 
-void GraphicsObject::SetModel(const Model* model)
+void GraphicsObject::SetModel(const Model* aModel)
 {
-	this->model = model;
+	this->model = aModel;
 }
 
-void GraphicsObject::SetTransform(ComponentHandle<Transform>* transform)
+void GraphicsObject::SetTransform(ComponentHandle<Transform>* aTransform)
 {
-	this->transform = transform;
+	this->transform = aTransform;
 }
 
 ComponentHandle<Transform>* GraphicsObject::GetTransform()

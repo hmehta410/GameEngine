@@ -30,6 +30,8 @@ public:
 	Matrix(const WorldType type, const Vect& scale, const Matrix& rot, const Vect& trans);
 	Matrix(const Quat& q);
 
+	Matrix& operator=(const Matrix& o);
+
 	~Matrix();
 
 	bool IsEqual(const Matrix& other, const float tolerance = util::kTolerance) const;

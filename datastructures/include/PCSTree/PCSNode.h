@@ -30,7 +30,7 @@ private:
 	void setDepth(int i) { depth = i; }
 
 	void* GetContainer() const { return DLink::GetContainer(); }
-	void SetContainer(void* container) { DLink::SetContainer(container); }
+	void SetContainer(void* aContainer) { DLink::SetContainer(aContainer); }
 
 	//member variables
 	PCSNode *parent;

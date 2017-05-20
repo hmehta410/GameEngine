@@ -21,12 +21,12 @@ Camera::Camera(int id) : id(id), padding(0), padding1(0), padding2(0)
 
 // critical informational knobs for the perspective matrix
 // Field of View Y is in degrees
-void Camera::SetPerspective(const float fovy, const float aspect, const float nearDist, const float farDist)
+void Camera::SetPerspective(const float fieldOfViewY, const float aspect, const float nearDistance, const float farDistance)
 {
-	this->fovy = fovy;
+	this->fovy = fieldOfViewY;
 	this->aspectRatio = aspect;
-	this->nearDist = nearDist;
-	this->farDist = farDist;
+	this->nearDist = nearDistance;
+	this->farDist = farDistance;
 }
 
 int Camera::GetScreenWidth() const
@@ -53,10 +53,10 @@ void Camera::SetViewport(const int inX, const int inY, const int width, const in
 // Goal, calculate the near height / width, same for far plane 
 void Camera::privCalcPlaneHeightWidth( void )
 {
-	this->nearHeight = 2.0f * tan(( this->fovy * util::kPi/180.0f ) * .5f) * this->nearDist;
+	this->nearHeight = 2.0f * tanf(( this->fovy * util::kPi/180.0f ) * .5f) * this->nearDist;
 	this->nearWidth = this->nearHeight * this->aspectRatio;
 
-	this->farHeight = 2.0f * tan(( this->fovy * util::kPi/180.0f) * .5f) * this->farDist;
+	this->farHeight = 2.0f * tanf(( this->fovy * util::kPi/180.0f) * .5f) * this->farDist;
 	this->farWidth = this->farHeight * this->aspectRatio;
 };
 
@@ -324,17 +324,17 @@ Vect Camera::GetTopNormal() const
 	return topNorm;
 }
 
-void Camera::GetNormalsAndPoints(Vect &up, Vect &tar, Vect &pos, Vect &upNorm, Vect &forwardNorm, Vect &rightNorm)
+void Camera::GetNormalsAndPoints(Vect &upOut, Vect &tarOut, Vect &posOut, Vect &upNormOut, Vect &forwardNormOut, Vect &rightNormOut)
 {
-	this->GetPosition(pos);
-	this->GetLookAt(tar);
+	this->GetPosition(posOut);
+	this->GetLookAt(tarOut);
 
-	this->GetUp(upNorm);
-	up = pos + upNorm;
+	this->GetUp(upNormOut);
+	upOut = posOut + upNormOut;
 
-	forwardNorm = tar - pos;
-	forwardNorm.Normalize();
+	forwardNormOut = tarOut - posOut;
+	forwardNormOut.Normalize();
 
 
-	this->GetRight(rightNorm);
+	this->GetRight(rightNormOut);
 }

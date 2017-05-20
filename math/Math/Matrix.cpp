@@ -142,10 +142,7 @@ Matrix::Matrix(const WorldType, const Vect& scale, const Matrix& rot, const Vect
 
 void Matrix::Set(const Matrix& m)
 {
-	this->v0_ = m.v0_;
-	this->v1_ = m.v1_;
-	this->v2_ = m.v2_;
-	this->v3_ = m.v3_;
+	*this = m;
 }
 
 void Matrix::Set(const Quat& quat)
@@ -1010,4 +1007,16 @@ float Matrix::operator[](const m14_enum) const
 float Matrix::operator[](const m15_enum) const
 {
 	return this->m15_;
+}
+
+Matrix& Matrix::operator=(const Matrix& o)
+{
+	if (this != &o)
+	{
+		this->v0_ = o.v0_;
+		this->v1_ = o.v1_;
+		this->v2_ = o.v2_;
+		this->v3_ = o.v3_;
+	}
+	return *this;
 }
